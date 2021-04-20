@@ -14,7 +14,15 @@ async function scrapeProduct(url) {
     const rawTxt = await txt.jsonValue()
     const title = rawTxt.replace(/\n/g, "");
 
-    console.log({ image, title });
+    const [el3] = await page.$x(
+      '//*[@id="tmmSwatches"]/ul/li[2]/span/span[3]/span[1]/span/a'
+    );
+    const txt2 = await el3.getProperty("textContent");
+    const rawPrice = await txt2.jsonValue();
+      const price = rawPrice.replace(/\n/g, "");
+    
+
+    console.log({ image, title, price });
 
     browser.close()
 }
