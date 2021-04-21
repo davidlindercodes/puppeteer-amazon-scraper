@@ -7,5 +7,6 @@ To demo the script
 => replace the URL with Amazon URL of your choice 
 => run 'npm install' 
 => run 'node scaper.js' 
+The results will be logged in the console
 
 Node must be installed on your computer. 
